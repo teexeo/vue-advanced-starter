@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <ElButton type="primary">Hello world</ElButton>
+  <div>Example template</div>
 </template>
