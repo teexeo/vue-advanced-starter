@@ -7,6 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Terminal from 'vite-plugin-terminal'
+import { RootDirs } from './config/dirs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,17 +19,19 @@ export default defineConfig({
     }),
     Components({
       dts: true,
-      dirs: ['./libs/ui'],
+      dirs: ['./libs/ui/**', ...RootDirs, "@vueuse/components"],
       resolvers: [ElementPlusResolver()],
       directoryAsNamespace: false,
-      include: [/^(?=.*shared)(?=.*(vue|tsx)).*$/]
+      // include: [/^(?=.*shared)(?=.*(vue|tsx)).*$/]
     }),
     AutoImport({
       dts: true,
       imports: [
-        'vue',
         {
-          'virtual:terminal': ['terminal']
+          'virtual:terminal': ['terminal'],
+          '@vueuse/core': ['useMouse'],
+          vue: ['ref', 'computed'],
+          pinia: ['defineStore']
         }
       ],
       include: [/\.[jt]sx?$/, /\.vue\??/],

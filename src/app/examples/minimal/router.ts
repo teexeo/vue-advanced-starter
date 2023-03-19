@@ -1,13 +1,14 @@
 import type { RouterOptions } from 'vue-router'
 
-export const DashboardRouter: RouterOptions['routes'] = [
+export const RouteName: RouterOptions['routes'] = [
   {
-    path: '/',
-    name: 'index',
+    path: '/example',
+    name: 'example',
     component: () => import('./layouts/default.vue'),
     children: [
       {
         path: '/',
+        name: 'example-children',
         component: () => import('./views/index.vue')
       }
     ]

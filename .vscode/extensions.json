@@ -1,3 +1,12 @@
 {
-  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+  "recommendations": [
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "rslfrkndmrky.rsl-vsc-focused-folder",
+    "moalamri.inline-fold",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "vscodevim.vim",
+    "saeed-nazari.adonis-theme"
+  ]
 }

@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
-  <div>Hello world from dashboard</div>
+  <div>Example template</div>
 </template>
