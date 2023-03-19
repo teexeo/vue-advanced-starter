@@ -10,6 +10,7 @@
   ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
+    "jsx": "react-jsx",
     "composite": true,
     "baseUrl": ".",
     "paths": {

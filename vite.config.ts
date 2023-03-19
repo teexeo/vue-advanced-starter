@@ -19,18 +19,18 @@ export default defineConfig({
     }),
     Components({
       dts: true,
-      dirs: ['./libs/ui/**', ...RootDirs, "@vueuse/components"],
+      dirs: ['./libs/ui/**', ...RootDirs, '@vueuse/components'],
       resolvers: [ElementPlusResolver()],
-      directoryAsNamespace: false,
+      directoryAsNamespace: false
       // include: [/^(?=.*shared)(?=.*(vue|tsx)).*$/]
     }),
     AutoImport({
       dts: true,
       imports: [
+        'vue',
         {
           'virtual:terminal': ['terminal'],
           '@vueuse/core': ['useMouse'],
-          vue: ['ref', 'computed'],
           pinia: ['defineStore']
         }
       ],
