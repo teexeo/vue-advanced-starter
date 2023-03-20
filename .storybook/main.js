@@ -1,9 +1,17 @@
 module.exports = {
-  stories: ['../src/**/stories/*.stories.mdx', '../src/app/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/stories/*.stories.mdx', '../src/app/**/stories/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
+        // For more details on this addon's options.
+        postCss: true
+      }
+    }
   ],
   framework: '@storybook/vue3',
   core: {

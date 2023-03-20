@@ -2,5 +2,5 @@
 defineProps<{ title: string }>()
 </script>
 <template>
-  <div>Title: {{ title }}</div>
+  <div class="text-2xl font-bold text-red-300">Title: {{ title }}</div>
 </template>
