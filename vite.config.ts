@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Terminal from 'vite-plugin-terminal'
 import { RootDirs } from './config/dirs'
 
@@ -19,10 +19,9 @@ export default defineConfig({
     }),
     Components({
       dts: true,
-      dirs: ['./libs/ui/**', ...RootDirs, '@vueuse/components'],
-      resolvers: [ElementPlusResolver()],
+      dirs: [...RootDirs],
+      resolvers: [ElementPlusResolver(), NaiveUiResolver()],
       directoryAsNamespace: false
-      // include: [/^(?=.*shared)(?=.*(vue|tsx)).*$/]
     }),
     AutoImport({
       dts: true,
@@ -31,11 +30,12 @@ export default defineConfig({
         {
           'virtual:terminal': ['terminal'],
           '@vueuse/core': ['useMouse'],
-          pinia: ['defineStore']
+          pinia: ['defineStore'],
+          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
         }
       ],
       include: [/\.[jt]sx?$/, /\.vue\??/],
-      resolvers: [ElementPlusResolver()]
+      resolvers: [ElementPlusResolver(), NaiveUiResolver()]
     })
   ],
   build: {

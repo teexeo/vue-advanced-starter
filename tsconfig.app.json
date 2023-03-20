@@ -6,9 +6,9 @@
     "src/**/*.vue",
     "libs/**/*",
     "components.d.ts",
-    "auto-imports.d.ts",
+    "auto-imports.d.ts"
   ],
-  "exclude": ["src/**/__tests__/*","**/*.stories.*"],
+  "exclude": ["src/**/__tests__/*", "**/*.stories.*"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "composite": true,
@@ -16,6 +16,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["element-plus/global", "vite-plugin-terminal/client"]
+    "types": ["element-plus/global", "vite-plugin-terminal/client", "naive-ui/volar"]
   }
 }
