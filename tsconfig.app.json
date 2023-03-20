@@ -16,6 +16,11 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["element-plus/global", "vite-plugin-terminal/client", "naive-ui/volar"]
+    "types": [
+      "element-plus/global",
+      "vite-plugin-terminal/client",
+      "naive-ui/volar",
+      "vitest/globals"
+    ]
   }
 }

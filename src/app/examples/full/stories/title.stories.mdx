@@ -1,22 +1,25 @@
-import Title from '../components/title.vue';
-import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import Title from '../components/title.vue'
+import { Meta, Canvas, Story } from '@storybook/addon-docs'
 
 <Meta title="Example/Button" component={Title} />
 
 export const Template = (args) => ({
   components: { Title },
   setup() {
-    return { args };
+    return { args }
   },
-  template: '<Title v-bind="args" />',
-});
-
+  template: '<Title v-bind="args" />'
+})
 
 # Primary Button
+
 <Canvas>
-  <Story name="Primary" args={{
-    title: "Hello from title"
-  }}>
+  <Story
+    name="Primary"
+    args={{
+      title: 'Hello from title'
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>

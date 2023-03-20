@@ -27,10 +27,11 @@ export default defineConfig({
       dts: true,
       imports: [
         'vue',
+        'vitest',
         {
           'virtual:terminal': ['terminal'],
           '@vueuse/core': ['useMouse'],
-          pinia: ['defineStore'],
+          pinia: ['defineStore', 'setActivePinia', 'createPinia'],
           'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
         }
       ],
@@ -47,6 +48,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  test: {
+    globals: true,
+    deps: {
+      inline: ['element-plus']
     }
   }
 })
