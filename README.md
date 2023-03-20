@@ -1,6 +1,24 @@
 # Vue Advanced Modular Architecture for Startups
 
 This template should help get you started developing with Vue 3 in Vite.
+## Technologies
+- Vue 3
+- Vite 4
+- Vitest
+- Cypress
+- Eslint
+- Tailwindcss
+- Naive UI
+- Element UI
+- Storybook
+- Vue Router
+- Pinia
+- TypeScript
+- Prettier
+- Xicons / fluent
+- vFonts
+- Vueuse
+
 
 ## Recommended IDE Setup
 
