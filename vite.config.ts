@@ -7,7 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Terminal from 'vite-plugin-terminal'
-import { RootDirs } from './config/dirs'
+import { AutoImportComponents, AutoImportUtils } from './config/dirs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +19,7 @@ export default defineConfig({
     }),
     Components({
       dts: true,
-      dirs: [...RootDirs],
+      dirs: [...AutoImportComponents],
       resolvers: [ElementPlusResolver(), NaiveUiResolver()],
       directoryAsNamespace: false
     }),
@@ -32,7 +32,8 @@ export default defineConfig({
           'virtual:terminal': ['terminal'],
           '@vueuse/core': ['useMouse'],
           pinia: ['defineStore', 'setActivePinia', 'createPinia'],
-          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
+          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
+          ...AutoImportUtils
         }
       ],
       include: [/\.[jt]sx?$/, /\.vue\??/],

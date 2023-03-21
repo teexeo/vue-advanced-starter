@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Counter from './components/counter.vue'
-import { useExampleStore } from './stores/example'
 
 const exampleStore = useExampleStore()
 </script>
